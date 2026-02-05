@@ -5,9 +5,8 @@ from .main import BooksCollector
 class TestBookCollector:
 
     @pytest.fixture(autouse=True)
-    def collector(self):
-        self.collector = BooksCollector()
-        return self.collector
+    def collector(self, collector):
+        self.collector = collector
 
     def test_add_new_book_add_two_books(self):
         self.collector.add_new_book('Гордость и предубеждение и зомби')
